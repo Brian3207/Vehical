@@ -1,6 +1,6 @@
 package VBrian;
 
-public class Automobile  extends Vehicle
+public class Automobile extends Vehicle
 {
 	Boolean trunk;
 	Boolean AC;
@@ -15,13 +15,13 @@ public class Automobile  extends Vehicle
 	{
 	super();
 		
-		owner = "Brian";
-		title = "Brian's Truck";
-		trunk = true;
-		AC = true;
-		tint = true;
-		autoMake = new Make();
-		autoModel = new Model();
+	owner = "Brian";
+	title = "Brian's Truck";
+	trunk = true;
+	AC = true;
+	tint = true;
+	autoMake = new Make();
+	autoModel = new Model();
 	}
 	
 	Automobile(int p, int fC, int m, Make aM, Model aD)
@@ -46,15 +46,22 @@ public class Automobile  extends Vehicle
 	
 	int getNumdoors()
 	{
-	return 0;
+	return super.doors;
 	}
 	
-	int getNumwheels()
+	public int getNumwheels()
 	{
-	return 0;
+	String[] trimpackage = autoModel.getTrimPackage();
+	int wheelCount = 4;
+	try {
+		wheelCount = Integer.parseInt(trimpackage[1]);
+		}
+	catch(Exception e) {
+		System.out.println("Awesome Trim Package");
 	}
+	return wheelCount;
 	
-	
+	}
 	public Make getAutoMake() {
 		return autoMake;
 	}
@@ -107,8 +114,4 @@ public class Automobile  extends Vehicle
 		// TODO Auto-generated method stub
 		
 	}
-	
-
-
-
-}
+	}

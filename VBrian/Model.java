@@ -20,7 +20,7 @@ public class Model
 	{
 		bodytype = Bt;
 		modelName = Mn;
-		this.trimPackage = new String [] {"Wheels", "4", "MPG", "21", "Color","Electric Blue","Seats", "4", "fuel cap", "tonage", "4.5"};
+		this.trimPackage = new String [] {"Wheels", "4", "MPG", "21", "Color","Electric Blue","Seats", "4", "fuel cap","34","tonage", "4.5"};
 	}
 
 		public String getBodytype() {

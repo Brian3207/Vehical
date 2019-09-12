@@ -9,7 +9,7 @@ abstract public class Vehicle
 	int mpg;
 	int doors;
 	int tireSize;
-	int tonage;
+	double tonage;
 	int modelYear;
 	int totalMiles;
 	int topSpeed;

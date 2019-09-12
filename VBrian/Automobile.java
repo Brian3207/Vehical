@@ -22,6 +22,7 @@ public class Automobile extends Vehicle
 	tint = true;
 	autoMake = new Make();
 	autoModel = new Model();
+	updateVehical();
 	}
 	
 	Automobile(int p, int fC, int m, Make aM, Model aD)
@@ -35,11 +36,22 @@ public class Automobile extends Vehicle
 	tint = true;
 	autoMake = aM;
 	autoModel = aD;
+	updateVehical();
 	}
 		
 	Automobile( int p, int fC, int m, int d, int tS, int t, int y, int tM, int mph, int s, int fL, String c, String h, String k,
 	            boolean aC, boolean tT, boolean tR, String o, String tI, Make aM, Model aD)
 	{super(p, fC, m, d, tS, t, y, tM, mph, s, fL, c, h, k);
+	
+	
+	owner = o;
+	title = tI;
+	trunk = tT;
+	AC = aC;
+	tint =tR;
+	autoMake = aM;
+	autoModel = aD;
+	updateVehical();
 	
 
 	}
@@ -62,6 +74,43 @@ public class Automobile extends Vehicle
 	return wheelCount;
 	
 	}
+	private void updateVehical()
+	{
+		String[] trmPak = autoModel.getTrimPackage();
+		int m, p, fC;
+		double tonage;
+		String color =trmPak[5];
+	try
+	{ 
+		m = Integer.parseInt(trmPak[12]);
+		p= Integer.parseInt(trmPak[4]);
+		fC = Integer.parseInt(trmPak[14]);
+	}
+	
+	catch (Exception e)
+	{
+		
+		m = 12;
+		p = 4;
+		fC = 14;
+		
+		System.out.println("Awesome Trim Package");
+	}
+	
+	try 
+	{
+		tonage = Double.parseDouble(trmPak[11]);
+	}
+	
+	catch (Exception e)
+	{
+		tonage = .75;
+		System.out.println("Awesome Trim Package");
+	}
+		
+	}
+	
+	
 	public Make getAutoMake() {
 		return autoMake;
 	}

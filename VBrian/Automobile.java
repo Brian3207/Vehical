@@ -161,6 +161,8 @@ public class Automobile extends Vehicle
 	@Override
 	void getmakemodel() {
 		// TODO Auto-generated method stub
-		
+		autoMake.getMake();
+		autoModel.getModel();
+
 	}
 	}

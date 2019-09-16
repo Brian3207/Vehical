@@ -4,6 +4,17 @@ package VBrian;
 
 abstract public class Vehicle 
 {
+
+	
+	
+	@Override
+	public String toString() {
+		return "Vehicle [passengers=" + passengers + ", fuelcap=" + fuelcap + ", mpg=" + mpg + ", doors=" + doors
+				+ ", tireSize=" + tireSize + ", tonage=" + tonage + ", modelYear=" + modelYear + ", totalMiles="
+				+ totalMiles + ", topSpeed=" + topSpeed + ", speed=" + speed + ", fuelLevel=" + fuelLevel + ", horn="
+				+ horn + ", key=" + key + ", color=" + color + "]";
+	}
+
 	int passengers;
 	int fuelcap;
 	int mpg;
@@ -61,7 +72,7 @@ abstract public class Vehicle
 	// Constructors involving all integer totals
 	{
 	doors = 4;
-	tireSize = 34;
+	tireSize = 36;
 	tonage = 3500;
 	modelYear = 1964;
 	passengers = 4;

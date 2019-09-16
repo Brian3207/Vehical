@@ -1,7 +1,9 @@
 package VBrian;
 
 public class Automobile extends Vehicle
+
 {
+	public static void main(String[] args) {}
 	Boolean trunk;
 	Boolean AC;
 	Boolean tint;
@@ -11,6 +13,13 @@ public class Automobile extends Vehicle
 	Model autoModel;
 
 	
+	
+	@Override
+	public String toString() {
+		return "Automobile [trunk=" + trunk + ", AC=" + AC + ", tint=" + tint + ", owner=" + owner + ", title=" + title + 
+				"doors = " + getNumdoors()+ "passengers = " +super.passengers +",\n autoMake=" + autoMake + ",\n autoModel=" + autoModel + "]";
+	}
+
 	Automobile()
 	{
 	super();
@@ -22,7 +31,7 @@ public class Automobile extends Vehicle
 	tint = true;
 	autoMake = new Make();
 	autoModel = new Model();
-	updateVehical();
+	updateVehicle();
 	}
 	
 	Automobile(int p, int fC, int m, Make aM, Model aD)
@@ -36,7 +45,7 @@ public class Automobile extends Vehicle
 	tint = true;
 	autoMake = aM;
 	autoModel = aD;
-	updateVehical();
+	updateVehicle();
 	}
 		
 	Automobile( int p, int fC, int m, int d, int tS, int t, int y, int tM, int mph, int s, int fL, String c, String h, String k,
@@ -51,20 +60,19 @@ public class Automobile extends Vehicle
 	tint =tR;
 	autoMake = aM;
 	autoModel = aD;
-	updateVehical();
+	updateVehicle();
 	
 
 	}
-	
-	int getNumdoors()
+		int getNumdoors()
 	{
-	return super.doors;
+			return super.doors;
 	}
 	
 	public int getNumwheels()
 	{
-	String[] trimpackage = autoModel.getTrimPackage();
-	int wheelCount = 4;
+		String[] trimpackage = autoModel.getTrimPackage();
+		int wheelCount = 4;
 	try {
 		wheelCount = Integer.parseInt(trimpackage[1]);
 		}
@@ -74,7 +82,7 @@ public class Automobile extends Vehicle
 	return wheelCount;
 	
 	}
-	private void updateVehical()
+	private void updateVehicle()
 	{
 		String[] trmPak = autoModel.getTrimPackage();
 		int m, p, fC;
@@ -82,12 +90,12 @@ public class Automobile extends Vehicle
 		String color =trmPak[5];
 	try
 	{ 
-		m = Integer.parseInt(trmPak[12]);
-		p= Integer.parseInt(trmPak[4]);
-		fC = Integer.parseInt(trmPak[14]);
+		m = Integer.parseInt(trmPak[3]);
+		p= Integer.parseInt(trmPak[7]);
+		fC = Integer.parseInt(trmPak[9]);
 	}
 	
-	catch (Exception e)
+	catch (NumberFormatException e)
 	{
 		
 		m = 12;
@@ -107,7 +115,14 @@ public class Automobile extends Vehicle
 		tonage = .75;
 		System.out.println("Awesome Trim Package");
 	}
-		
+	
+		super.mpg = m;
+		super.passengers = p;
+		super.fuelcap = fC;
+		super.color = color;
+		super.tonage = tonage;
+	
+	
 	}
 	
 	
@@ -162,7 +177,7 @@ public class Automobile extends Vehicle
 	void getmakemodel() {
 		// TODO Auto-generated method stub
 		autoMake.getMake();
-		autoModel.getModel();
+		autoModel.getModelName();
 
 	}
 	}

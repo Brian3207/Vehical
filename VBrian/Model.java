@@ -1,26 +1,35 @@
 package VBrian;
 
+import java.util.Arrays;
+
 public class Model 
 
 //Trim Package Details - Wheel-Count(int), MPG(int), Color, Seats(int), fuelcap(int), tonage(double)
 
 {
-	private	String bodytype;
-	private	String modelName;
-	private	String[] trimPackage;
+	String bodytype;
+	String modelName;
+	String[] trimPackage;
 
 	Model()
 	{
 		bodytype = "Truck";
 		modelName = "Dodge";
-		
+		trimPackage = new String [] {"Wheels", "4", "MPG", "21", "Color","Electric Blue","Seats", "4", "fuel cap","34","tonage", "4.5"};
 	}
 	
 	Model(String Bt, String Mn, String[] trimPackage)
+	
 	{
 		bodytype = Bt;
 		modelName = Mn;
-		this.trimPackage = new String [] {"Wheels", "4", "MPG", "21", "Color","Electric Blue","Seats", "4", "fuel cap","34","tonage", "4.5"};
+		this.trimPackage = trimPackage;
+	}
+		
+		@Override
+	public String toString() {
+		return "Model [bodytype=" + bodytype + ", modelName=" + modelName + ", trimPackage="
+				+ Arrays.toString(trimPackage) + "]";
 	}
 
 		public String getBodytype() {
